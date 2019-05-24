@@ -38,10 +38,12 @@ class Unet(object):
 
 
 class VGG_16(Unet):
-    def __init__(self, network=None):
-        self.define_filters((3,3))
+    def __init__(self, network=None, activation='relu',filter_size=(3,3),out_classes=2):
+        self.filter_size = filter_size
+        self.define_filters((3,3)) # This changes after the VGG16
         self.define_pool_size((2,2))
-        self.define_activation('relu')
+        self.define_activation(activation)
+        self.out_classes = out_classes
         self.network = network
 
     def make_network(self):
@@ -70,6 +72,7 @@ class VGG_16(Unet):
             if layer != 'Layer_4':
                 layer_order.append(layer)
                 x = self.pool_block(x, name='block'+str(i+1)+'_pool')
+        self.define_filters(self.filter_size)
         layer_order.reverse()
         layer_index -= 1
         for i, layer in enumerate(layer_order):
@@ -84,8 +87,7 @@ class VGG_16(Unet):
                 self.desc = layer + '_Decoding_Conv' + str(i)
                 x = self.conv_block(all_filters[i], x, self.desc)
 
-        x = self.conv_block(16, x=x, name='Before_output')
-        x = Conv2D(2, kernel_size=(1,1), name='Output', activation='softmax')(x)
+        x = Conv2D(self.out_classes, kernel_size=(1,1), name='Output', activation='softmax')(x)
 
         model = Model(inputs=[image_input_primary], outputs=[x],name='VGG16_FineTune')
         self.created_model = model

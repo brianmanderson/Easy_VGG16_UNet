@@ -9,7 +9,7 @@ network = {'Layer_0': {'Encoding': [64, 64], 'Decoding': [64, 32]},
 '''
 The encoding part of the network should not be changed, as it will not load in the VGG_16 pre-trained weights otherwise
 '''
-VGG_model = VGG_16(network=network)
+VGG_model = VGG_16(network=network, activation='relu',filter_size=(3,3))
 VGG_model.make_model()
 VGG_model.load_weights()
 new_model = VGG_model.created_model
