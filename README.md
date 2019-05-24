@@ -2,6 +2,8 @@
 
 This works by loading in the pre-trained weights on the encoding side of the VGG-16 architecture
 
+Input image shape is arbitarily set
+
     from Keras_Fine_Tune_VGG_16_Liver import VGG_16
     network = {'Layer_0': {'Encoding': [64, 64], 'Decoding': [64, 32]},
                'Layer_1': {'Encoding': [128, 128], 'Decoding': [128]},
