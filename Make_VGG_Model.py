@@ -1,3 +1,14 @@
+'''
+Keras_Fine_Tune_VGG_16_Liver.py
+
+This function loads in the original VGG-16 architecture from Keras (Do not change the encoding side) and appends on
+the decoding side to the original resolution
+
+Please give reference to https://github.com/brianmanderson/Easy_VGG16_UNet if used
+'''
+__author__ = 'Brian Mark Anderson'
+__email__ = 'bmanderson@mdanderson.org'
+
 from Keras_Fine_Tune_VGG_16_Liver import VGG_16
 
 my_path = r'Y:\CNN\VGG_16\VGG16_UNet.hdf5'

@@ -1,3 +1,15 @@
+'''
+Keras_Fine_Tune_VGG_16_Liver.py
+
+This function loads in the original VGG-16 architecture from Keras and appends on the decoding steps are specified by
+the given dictionary
+
+Please give reference to https://github.com/brianmanderson/Easy_VGG16_UNet if used
+'''
+__author__ = 'Brian Mark Anderson'
+__email__ = 'bmanderson@mdanderson.org'
+
+
 from keras.applications import imagenet_utils
 from keras import models
 from keras.layers import Conv2D, Activation, BatchNormalization, Input, MaxPooling2D, UpSampling2D, Concatenate
