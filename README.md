@@ -1,3 +1,4 @@
+## If you find this code useful, please provide a reference to my github page for others www.github.com/brianmanderson , thank you!
 "# Easy_VGG16_UNet" 
 
 This works by loading in the pre-trained weights on the encoding side of the VGG-16 architecture
