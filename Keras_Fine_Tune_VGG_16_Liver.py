@@ -10,11 +10,10 @@ __author__ = 'Brian Mark Anderson'
 __email__ = 'bmanderson@mdanderson.org'
 
 
-from keras.applications import imagenet_utils
-from keras import models
-from keras.layers import Conv2D, Activation, BatchNormalization, Input, MaxPooling2D, UpSampling2D, Concatenate
-from keras.models import Model
-from keras.utils import get_file
+from tensorflow.python.keras.applications import imagenet_utils
+from tensorflow.python.keras.layers import Conv2D, Activation, Input, MaxPooling2D, UpSampling2D, Concatenate
+from tensorflow.python.keras.models import Model
+from tensorflow.python.keras.utils import get_file
 preprocess_input = imagenet_utils.preprocess_input
 
 WEIGHTS_PATH = ('https://github.com/fchollet/deep-learning-models/'
