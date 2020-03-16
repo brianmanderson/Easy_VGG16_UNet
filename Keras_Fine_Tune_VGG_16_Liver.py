@@ -14,7 +14,7 @@ from tensorflow.python.keras.applications import imagenet_utils
 from tensorflow.python.keras.layers import Conv2D, Activation, Input, MaxPooling2D, UpSampling2D, Concatenate
 from tensorflow.python.keras.models import Model
 from tensorflow.python.keras.utils import get_file
-preprocess_input = imagenet_utils.preprocess_input
+# preprocess_input = imagenet_utils.preprocess_input
 
 WEIGHTS_PATH = ('https://github.com/fchollet/deep-learning-models/'
                 'releases/download/v0.1/'
@@ -113,4 +113,4 @@ class VGG_16(Unet):
 
 
 if __name__ == '__main__':
-    xxx = 1
+    pass
